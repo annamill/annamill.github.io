@@ -25,8 +25,11 @@
         const radius = 2;
         const geometry = new THREE.SphereGeometry(radius, 32, 32);
 
-        // Create a material
-        const material = new THREE.PointsMaterial({ size: 0.05 });
+       // Create a material with random colors between pink and orange
+            const material = new THREE.PointsMaterial({
+                size: 0.05,
+                color: new THREE.Color().setHSL(Math.random() * 0.1 + 0.9, 1, 0.5) // Random color between pink and orange
+            });
 
         // Create a point cloud
         const points = new THREE.Points(geometry, material);
